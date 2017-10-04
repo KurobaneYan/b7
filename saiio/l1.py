@@ -94,53 +94,59 @@ def dual_simplex(A, b, c, dL, dU, Jb):
     elif (stop_nosolution):
         return None, None
 
-# test 1
 
-A = [
-    [1, -5, 3, 1, 0, 0],
-    [4, -1, 1, 0, 1, 0],
-    [2, 4, 2, 0, 0, 1]
-]
-b =  [-7, 22, 30]
-dL = [2, 1, 0, 0, 1, 1]
-dU = [6, 6, 5, 2, 4, 6]
-c =  [7, -2, 6, 0, 5, 2]
-Jb = [1, 2, 3]
+if __name__ == '__main__':
+    # test 1
+    A = [
+        [1, -5, 3, 1, 0, 0],
+        [4, -1, 1, 0, 1, 0],
+        [2, 4, 2, 0, 0, 1]
+    ]
+    b =  [-7, 22, 30]
+    dL = [2, 1, 0, 0, 1, 1]
+    dU = [6, 6, 5, 2, 4, 6]
+    c =  [7, -2, 6, 0, 5, 2]
+    Jb = [1, 2, 3]
 
-# resault1, iterations = dual_simplex(A, b, c, dL, dU, Jb)
+    resault1, iterations1 = dual_simplex(A, b, c, dL, dU, Jb)
 
-# test 3
+    print('test 1')
+    print(resault1)
+    print(str(iterations1) + ' iterations')
 
-A3 = [
-    [1, 0, 0, 12, 1, -3, 4, -1],
-    [0, 1, 0, 11, 12, 3, 5, 3],
-    [0, 0, 1, 1, 0, 22, -2, 1]
-]
-b3 =  [40, 107, 61]
-dL3 = [0, 0, 0, 0, 0, 0, 0, 0]
-dU3 = [3, 5, 5, 3, 4, 5, 6, 3]
-c3 =  [2, 1, -2, -1, 4, -5, 5, 5]
-Jb3 = [1, 2, 3]
+    # test 2
+    A2 = [
+        [1, 0, 0, 12, 1, -3, 4, -1],
+        [0, 1, 0, 11, 12, 3, 5, 3],
+        [0, 0, 1, 1, 0, 22, -2, 1]
+    ]
+    b2 =  [40, 107, 61]
+    dL2 = [0, 0, 0, 0, 0, 0, 0, 0]
+    dU2 = [3, 5, 5, 3, 4, 5, 6, 3]
+    c2 =  [2, 1, -2, -1, 4, -5, 5, 5]
+    Jb2 = [1, 2, 3]
 
-resault3, iterations3 = dual_simplex(A3, b3, c3, dL3, dU3, Jb3)
+    resault2, iterations2 = dual_simplex(A2, b2, c2, dL2, dU2, Jb2)
 
-print(resault3)
-print(str(iterations3) + ' iterations')
+    print('\ntest 2')
+    print(resault2)
+    print(str(iterations2) + ' iterations')
 
 
-A5 = [
-    [1, 7, 2, 0, 1, -1, 4],
-    [0, 5, 6, 1, 0, -3, 2],
-    [3, 2, 2, 1, 1, 1, 5]
-]
-b5 =  [1, 4, 7]
-dL5 = [-1, 1, -2, 0, 1, 2, 4]
-dU5 = [3, 2, 2, 5, 3, 4, 5]
-c5 =  [1, 2, 1, -3, 3, 1, 0]
-Jb5 = [1, 2, 3]
+    A3 = [
+        [1, 7, 2, 0, 1, -1, 4],
+        [0, 5, 6, 1, 0, -3, 2],
+        [3, 2, 2, 1, 1, 1, 5]
+    ]
+    b3 =  [1, 4, 7]
+    dL3 = [-1, 1, -2, 0, 1, 2, 4]
+    dU3 = [3, 2, 2, 5, 3, 4, 5]
+    c3 =  [1, 2, 1, -3, 3, 1, 0]
+    Jb3 = [1, 2, 3]
 
-resault5, iterations5 = dual_simplex(A5, b5, c5, dL5, dU5, Jb5)
+    resault3, iterations3 = dual_simplex(A3, b3, c3, dL3, dU3, Jb3)
 
-print(resault5)
-print(str(iterations5) + ' iterations')
+    print('\ntest 3')
+    print(resault3)
+    print(str(iterations3) + ' iterations')
 
